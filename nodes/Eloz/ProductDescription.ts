@@ -319,7 +319,7 @@ export const productOperations: INodeProperties[] = [
 		name: 'listAllProduct',
 		type: 'boolean',
 		default: false,
-		description: 'Caso selecionado, vai listar todos resultados da pesquisa de uma só vez',
+		description: 'Whether - Caso selecionado, vai listar todos resultados da pesquisa de uma só vez',
 		displayOptions: { 
 			show: {
 				operation: ['searchProduct'],
@@ -413,7 +413,7 @@ export const productOperations: INodeProperties[] = [
 		name: 'listAllListProducts',
 		type: 'boolean',
 		default: false,
-		description: 'Caso selecionado, vai listar todos resultados da pesquisa de uma só vez',
+		description: 'Whether - Caso selecionado, vai listar todos resultados da pesquisa de uma só vez',
 		displayOptions: { 
 			show: {
 				operation: ['listProducts'],
@@ -425,7 +425,7 @@ export const productOperations: INodeProperties[] = [
 		name: 'watchProductsList',
 		type: 'boolean',
 		default: true,
-		description: 'Caso selecionado, toda vez que o processo do N8N executar ele vai listar a partir do ultimo cursor',
+		description: 'Whether - Caso selecionado, toda vez que o processo do N8N executar ele vai listar a partir do ultimo cursor',
 		displayOptions: { 
 			show: {
 				operation: ['listProducts'],

@@ -129,7 +129,7 @@ export const taskOperations: INodeProperties[] = [
 		displayName: 'Prioridade',
 		name: 'priorityTask',
 		type: 'options',
-		default: undefined,
+		default: '1',
 		required: true,
 		options: [
 			{
@@ -267,7 +267,7 @@ export const taskOperations: INodeProperties[] = [
 		name: 'listAllTask',
 		type: 'boolean',
 		default: false,
-		description: 'Caso selecionado, vai listar todos resultados da pesquisa de uma só vez',
+		description: 'Whether - Caso selecionado, vai listar todos resultados da pesquisa de uma só vez',
 		displayOptions: { 
 			show: {
 				operation: ['listTasks'],
@@ -279,7 +279,7 @@ export const taskOperations: INodeProperties[] = [
 		name: 'watchListTask',
 		type: 'boolean',
 		default: true,
-		description: 'Caso selecionado, toda vez que o processo do N8N executar ele vai listar a partir do ultimo cursor',
+		description: 'Whether - Caso selecionado, toda vez que o processo do N8N executar ele vai listar a partir do ultimo cursor',
 		displayOptions: { 
 			show: {
 				operation: ['listTasks'],
@@ -399,7 +399,7 @@ export const taskOperations: INodeProperties[] = [
 		displayName: 'Prioridade',
 		name: 'priorityTaskUpdate',
 		type: 'options',
-		default: undefined,
+		default: '1',
 		options: [
 			{
 				"value": "1",

@@ -327,7 +327,7 @@ export const companyOperations: INodeProperties[] = [
 		name: 'listAllCompany',
 		type: 'boolean',
 		default: false,
-		description: 'Caso Selecionado, Vai Listar Todos Resultados Da Pesquisa De Uma Só Vez',
+		description: 'Whether - Caso selecionado, vai listar todos resultados da pesquisa de uma só vez',
 		displayOptions: { 
 			show: {
 				operation: ['searchCompany'],

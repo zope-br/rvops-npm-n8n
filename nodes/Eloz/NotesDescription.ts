@@ -78,12 +78,12 @@ export const noteOperations: INodeProperties[] = [
 		required: true,
 		options: [
 			{
-				name: 'Geral',
-				value: 'general',
-			},
-			{
 				name: 'Email',
 				value: 'email',
+			},
+			{
+				name: 'Geral',
+				value: 'general',
 			},
 			{
 				name: 'Ligação',

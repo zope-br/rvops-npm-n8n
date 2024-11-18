@@ -22,43 +22,43 @@ import { segmentsOperations } from './SegmentsDescription';
 
 const productProperties = [
 	{
-		name: 'ID do produto',
+		name: 'ID Do Produto',
 		value: 'id',
 	},
 	{
-		name: 'Nome do produto',
+		name: 'Nome Do Produto',
 		value: 'name',
 	},
 	{
-		name: 'Preço do produto',
+		name: 'Preço Do Produto',
 		value: 'price',
 	},
 	{
-		name: 'Código SKU do produto',
+		name: 'Código SKU Do Produto',
 		value: 'sku',
 	},
 	{
-		name: 'Frequência de cobrança do produto',
+		name: 'Frequência De cobrança Do Produto',
 		value: 'frequency',
 	},
 	{
-		name: 'Custo unitário do produto',
+		name: 'Custo Unitário Do Produto',
 		value: 'unit_cost',
 	},
 	{
-		name: 'URL do produto',
+		name: 'URL Do Produto',
 		value: 'url',
 	},
 	{
-		name: 'Prazo em meses para a renovação do produto',
+		name: 'Prazo Em Meses Para a Renovação Do Produto',
 		value: 'months_term',
 	},
 	{
-		name: 'Descrição do produto',
+		name: 'Descrição Do Produto',
 		value: 'description',
 	},
 	{
-		name: 'Data e hora da última atualização do produto',
+		name: 'Data E Hora Da Última Atualização Do Produto',
 		value: 'updatedAt',
 	},
 ]
@@ -67,7 +67,7 @@ export class Eloz implements INodeType {
 
 	description: INodeTypeDescription = {
 		displayName: 'Rvops',
-		name: 'Rvops',
+		name: 'rvops',
 		icon: 'file:rvops.png',
 		group: ['input'],
 		version: 1,
@@ -90,7 +90,7 @@ export class Eloz implements INodeType {
 		],
 		properties: [
 			{
-				displayName: 'Autenticação do cliente',
+				displayName: 'Autenticação Do Cliente',
 				name: 'authentication',
 				type: 'options',
 				options: [
@@ -144,7 +144,7 @@ export class Eloz implements INodeType {
 						value: 'properties',
 					},
 					{
-						name: 'Segmentos',
+						name: 'Segmento',
 						value: 'segments',
 					}
 				],

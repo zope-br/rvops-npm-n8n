@@ -2,51 +2,51 @@ import type { INodeProperties } from 'n8n-workflow';
 
 const filterOptions = [
 	{
-		name: 'Igual a',
+		name: 'Igual A',
 		value: 'EQ',
 	},
 	{
-		name: 'Diferente de',
+		name: 'Diferente De',
 		value: 'NEQ',
 	},
 	{
-		name: 'Maior que',
+		name: 'Maior Que',
 		value: 'GT',
 	},
 	{
-		name: 'Menor que',
+		name: 'Menor Que',
 		value: 'LT',
 	},
 	{
-		name: 'Maior ou igual a',
+		name: 'Maior Ou Igual A',
 		value: 'GTE',
 	},
 	{
-		name: 'Menor ou igual a',
+		name: 'Menor Ou Igual A',
 		value: 'LTE',
 	},
 	{
-		name: 'Contido em uma lista',
+		name: 'Contido Em Uma Lista',
 		value: 'IN',
 	},
 	{
-		name: 'Não contido em uma lista',
+		name: 'Não Contido Em Uma Lista',
 		value: 'NOT_IN',
 	},
 	{
-		name: 'Propriedade existe',
+		name: 'Propriedade Existe',
 		value: 'HAS_PROPERTY',
 	},
 	{
-		name: 'Propriedade não existe',
+		name: 'Propriedade Não Existe',
 		value: 'NOT_HAS_PROPERTY',
 	},
 	{
-		name: 'Contém a palavra específica',
+		name: 'Contém a Palavra Específica',
 		value: 'CONTAINS_TOKEN',
 	},
 	{
-		name: 'Não contém a palavra específica',
+		name: 'Não Contém a Palavra Específica',
 		value: 'NOT_CONTAINS_TOKEN',
 	},
 ];
@@ -65,46 +65,40 @@ export const contactOperations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Get a contact',
+				name: 'Get a Contact',
 				value: 'get',
-				description: 'Get a contact',
 				action: 'Get a contact',
 			},
 			{
-				name: 'Create a contact',
+				name: 'Create a Contact',
 				value: 'create',
-				description: 'Create a contact',
 				action: 'Create a contact',
 			},
 			{
-				name: 'Search a contact',
+				name: 'Search a Contact',
 				value: 'search',
-				description: 'Search a contact',
 				action: 'Search a contact',
 			},
 			{
-				name: 'Update a contact',
+				name: 'Update a Contact',
 				value: 'update',
-				description: 'Update a contact',
 				action: 'Update a contact',
 			},
 			{
-				name: 'Delete a contact',
+				name: 'Delete a Contact',
 				value: 'delete',
-				description: 'Delete a contact',
 				action: 'Delete a contact',
 			},
 			{
-				name: 'List contacts',
+				name: 'List Contacts',
 				value: 'list',
-				description: 'List contacts',
 				action: 'List contacts',
 			},
 		],
 		default: 'get',
 	},
 	{
-		displayName: 'Id do contato',
+		displayName: 'ID Do Contato',
 		name: 'id',
 		type: 'string',
 		default: '',
@@ -114,7 +108,6 @@ export const contactOperations: INodeProperties[] = [
 				operation: ['get'],
 			},
 		},
-		description: "",
 	},
 	{
 		displayName: 'Propriedades',
@@ -136,9 +129,10 @@ export const contactOperations: INodeProperties[] = [
 				displayName: 'Propriedade',
 				values: [
 					{
-						displayName: 'Nome da propriedade',
+						displayName: 'Nome Da Propriedade Name or ID',
 						name: 'property',
 						type: 'options',
+						description: 'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
 						required: true,
 						typeOptions: {
 							loadOptionsMethod: 'getContactProperties',
@@ -151,14 +145,13 @@ export const contactOperations: INodeProperties[] = [
 						type: 'string',
 						default: '',
 						required: true,
-						description: '',
 					},
 				],
 			},
 		],
 	},
 	{
-		displayName: 'Associações com Empresas',
+		displayName: 'Associações Com Empresas',
 		name: 'associationCompanys',
 		placeholder: 'Adicionar associação com Empresa',
 		type: 'fixedCollection',
@@ -177,11 +170,10 @@ export const contactOperations: INodeProperties[] = [
 				displayName: 'Associações',
 				values: [
 					{
-						displayName: 'Associações com Empresas',
+						displayName: 'Associações Com Empresas',
 						name: 'companies',
 						type: 'number',
 						default: '',
-						required: false,
 						description: 'ID da Empressa que deseja associar o contato',
 						typeOptions: {
 							minValue: 0,
@@ -193,7 +185,7 @@ export const contactOperations: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Associações com Negócios',
+		displayName: 'Associações Com Negócios',
 		name: 'associationDeals',
 		placeholder: 'Adicionar associação com Negócio',
 		type: 'fixedCollection',
@@ -212,10 +204,9 @@ export const contactOperations: INodeProperties[] = [
 				displayName: 'Associações',
 				values: [
 					{
-						displayName: 'Associação com Negócio',
+						displayName: 'Associação Com Negócio',
 						name: 'deals',
 						type: 'number',
-						required: false,
 						default: '',
 						description: 'ID do Negócio que deseja associar o contato',
 						typeOptions: {
@@ -244,12 +235,13 @@ export const contactOperations: INodeProperties[] = [
 		options: [
 			{
 				name: 'Filtros',
-				displayName: 'filters',
+				displayName: 'Filters',
 				values: [
 					{
-						displayName: 'Propriedade',
+						displayName: 'Propriedade Name or ID',
 						name: 'propertyName',
 						type: 'options',
+						description: 'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
 						typeOptions: {
 							loadOptionsMethod: 'getContactProperties',
 						},
@@ -265,7 +257,7 @@ export const contactOperations: INodeProperties[] = [
 						required: true,
 					},
 					{
-						displayName: 'Valor a filtrar',
+						displayName: 'Valor a Filtrar',
 						name: 'value',
 						type: 'string',
 						default: ``,
@@ -276,11 +268,10 @@ export const contactOperations: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Propriedades',
+		displayName: 'Propriedade Names or IDs',
 		name: 'properties',
 		type: 'multiOptions',
 		default: [],
-		required: false,
 		typeOptions: {
 			loadOptionsMethod: 'getContactProperties',
 		},
@@ -289,7 +280,7 @@ export const contactOperations: INodeProperties[] = [
 				operation: ['search'],
 			},
 		},
-		description: "Propriedades adicionais que você deseja incluir no retorno da sua busca.",
+		description: 'Propriedades adicionais que você deseja incluir no retorno da sua busca. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Limit',
@@ -301,7 +292,7 @@ export const contactOperations: INodeProperties[] = [
 				operation: ['search'],
 			},
 		},
-		description: "Limite da quantidade de retornos.",
+		description: 'Limite da quantidade de retornos',
 		typeOptions: {
 			maxValue: 100,
 			minValue: 1,
@@ -310,11 +301,11 @@ export const contactOperations: INodeProperties[] = [
 		default: 100,
 	},
 	{
-		displayName: 'Listar todos',
+		displayName: 'Listar Todos',
 		name: 'listAll',
 		type: 'boolean',
 		default: false,
-		description: 'Caso selecionado, vai listar todos resultados da pesquisa de uma só vez.',
+		description: 'Caso selecionado, vai listar todos resultados da pesquisa de uma só vez',
 		displayOptions: { 
 			show: {
 				operation: ['search'],
@@ -322,7 +313,7 @@ export const contactOperations: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Id do contato',
+		displayName: 'ID Do Contato',
 		name: 'id',
 		type: 'string',
 		default: '',
@@ -332,7 +323,6 @@ export const contactOperations: INodeProperties[] = [
 				operation: ['update'],
 			},
 		},
-		description: "",
 	},
 	{
 		displayName: 'Propriedades',
@@ -354,9 +344,10 @@ export const contactOperations: INodeProperties[] = [
 				displayName: 'Propriedade',
 				values: [
 					{
-						displayName: 'Nome da propriedade',
+						displayName: 'Nome Da Propriedade Name or ID',
 						name: 'property',
 						type: 'options',
+						description: 'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
 						typeOptions: {
 							loadOptionsMethod: 'getContactProperties',
 						},
@@ -368,14 +359,13 @@ export const contactOperations: INodeProperties[] = [
 						type: 'string',
 						default: '',
 						required: true,
-						description: '',
 					},
 				],
 			},
 		],
 	},
 	{
-		displayName: 'Id do contato',
+		displayName: 'ID Do Contato',
 		name: 'id',
 		type: 'string',
 		default: '',
@@ -385,33 +375,30 @@ export const contactOperations: INodeProperties[] = [
 				operation: ['delete'],
 			},
 		},
-		description: "",
 	},
 
 	{
 		displayName: 'Limite',
 		name: 'limit',
 		type: 'number',
-		default: 100,
+		default: 50,
 		required: true,
 		displayOptions: {
 			show: {
 				operation: ['list'],
 			},
 		},
-		description: "Limita a quantidade de contatos listados",
+		description: 'Max number of results to return',
 		typeOptions: {
-			maxValue: 100,
 			minValue: 1,
 			numberPrecision: 0,
 		}
 	},
 	{
-		displayName: 'ID do fluxo de Automação',
+		displayName: 'ID Do Fluxo De Automação',
 		name: 'campaignId',
 		type: 'number',
 		default: 0,
-		required: false,
 		displayOptions: {
 			show: {
 				operation: ['list'],
@@ -424,11 +411,10 @@ export const contactOperations: INodeProperties[] = [
 		}
 	},
 	{
-		displayName: 'ID do segmento',
+		displayName: 'ID Do Segmento',
 		name: 'segmentId',
 		type: 'number',
 		default: 0,
-		required: false,
 		displayOptions: {
 			show: {
 				operation: ['list'],
@@ -441,11 +427,10 @@ export const contactOperations: INodeProperties[] = [
 		}
 	},
 	{
-		displayName: 'Propriedades',
+		displayName: 'Propriedade Names or IDs',
 		name: 'properties',
 		type: 'multiOptions',
 		default: [],
-		required: false,
 		typeOptions: {
 			loadOptionsMethod: 'getContactProperties',
 		},
@@ -454,14 +439,14 @@ export const contactOperations: INodeProperties[] = [
 				operation: ['list'],
 			},
 		},
-		description: "Propriedades adicionais que você deseja incluir no retorno da sua busca.",
+		description: 'Propriedades adicionais que você deseja incluir no retorno da sua busca. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.',
 	},
 	{
-		displayName: 'Listar todos',
+		displayName: 'Listar Todos',
 		name: 'listAllList',
 		type: 'boolean',
 		default: false,
-		description: 'Caso selecionado, vai listar todos resultados da pesquisa de uma só vez.',
+		description: 'Caso selecionado, vai listar todos resultados da pesquisa de uma só vez',
 		displayOptions: { 
 			show: {
 				operation: ['list'],
@@ -469,11 +454,11 @@ export const contactOperations: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Monitorar novos valores',
+		displayName: 'Monitorar Novos Valores',
 		name: 'watchContactList',
 		type: 'boolean',
 		default: true,
-		description: 'Caso selecionado, toda vez que o processo do N8N executar ele vai listar a partir do ultimo cursor.',
+		description: 'Caso selecionado, toda vez que o processo do N8N executar ele vai listar a partir do ultimo cursor',
 		displayOptions: { 
 			show: {
 				operation: ['list'],
@@ -481,21 +466,21 @@ export const contactOperations: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Campo de ordenação',
+		displayName: 'Campo De Ordenação',
 		name: 'sortList',
 		type: 'options',
 		options: [
 			{
-				name: 'Data de modificação',
+				name: 'Data De Modificação',
 				value: 'date_modified',
 			},
 			{
-				name: 'Data de inclusão',
+				name: 'Data De Inclusão',
 				value: 'date_added',
 			},
 		],
 		default: 'date_modified', 
-		description: 'Campo em que deseja ordenar os resultados, por padrão ordenamos por data de modificação.',
+		description: 'Campo em que deseja ordenar os resultados, por padrão ordenamos por data de modificação',
 		displayOptions: {
 			show: {
 				watchContactList: [false],
@@ -503,7 +488,7 @@ export const contactOperations: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Tipo de ordenação',
+		displayName: 'Tipo De Ordenação',
 		name: 'orderList',
 		type: 'options',
 		options: [

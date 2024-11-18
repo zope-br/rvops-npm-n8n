@@ -2,51 +2,51 @@ import type { INodeProperties } from 'n8n-workflow';
 
 const filterOptions = [
 	{
-		name: 'Igual a',
+		name: 'Igual A',
 		value: 'EQ',
 	},
 	{
-		name: 'Diferente de',
+		name: 'Diferente De',
 		value: 'NEQ',
 	},
 	{
-		name: 'Maior que',
+		name: 'Maior Que',
 		value: 'GT',
 	},
 	{
-		name: 'Menor que',
+		name: 'Menor Que',
 		value: 'LT',
 	},
 	{
-		name: 'Maior ou igual a',
+		name: 'Maior Ou Igual A',
 		value: 'GTE',
 	},
 	{
-		name: 'Menor ou igual a',
+		name: 'Menor Ou Igual A',
 		value: 'LTE',
 	},
 	{
-		name: 'Contido em uma lista',
+		name: 'Contido Em Uma Lista',
 		value: 'IN',
 	},
 	{
-		name: 'Não contido em uma lista',
+		name: 'Não Contido Em Uma Lista',
 		value: 'NOT_IN',
 	},
 	{
-		name: 'Propriedade existe',
+		name: 'Propriedade Existe',
 		value: 'HAS_PROPERTY',
 	},
 	{
-		name: 'Propriedade não existe',
+		name: 'Propriedade Não Existe',
 		value: 'NOT_HAS_PROPERTY',
 	},
 	{
-		name: 'Contém a palavra específica',
+		name: 'Contém a Palavra Específica',
 		value: 'CONTAINS_TOKEN',
 	},
 	{
-		name: 'Não contém a palavra específica',
+		name: 'Não Contém a Palavra Específica',
 		value: 'NOT_CONTAINS_TOKEN',
 	},
 ];
@@ -66,38 +66,33 @@ export const companyOperations: INodeProperties[] = [
 			{
 				name: 'Get a Company',
 				value: 'getCompany',
-				description: 'Get a company',
 				action: 'Get a company',
 			},
 			{
 				name: 'Create a Company',
 				value: 'createCompany',
-				description: 'Create a company',
 				action: 'Create a company',
 			},
 			{
 				name: 'Search a Company',
 				value: 'searchCompany',
-				description: 'Search a company',
 				action: 'Search a company',
 			},
 			{
 				name: 'Update a Company',
 				value: 'updateCompany',
-				description: 'Update a company',
 				action: 'Update a company',
 			},
 			{
 				name: 'Delete a Company',
 				value: 'deleteCompany',
-				description: 'Delete a company',
 				action: 'Delete a company',
 			},
 		],
 		default: 'getCompany',
 	},
 	{
-		displayName: 'Id da empresa',
+		displayName: 'ID Da Empresa',
 		name: 'id',
 		type: 'string',
 		default: '',
@@ -107,10 +102,9 @@ export const companyOperations: INodeProperties[] = [
 				operation: ['getCompany'],
 			},
 		},
-		description: "",
 	},
 	{
-		displayName: 'Nome da Empresa',
+		displayName: 'Nome Da Empresa',
 		name: 'companyname',
 		type: 'string',
 		default: '',
@@ -120,14 +114,12 @@ export const companyOperations: INodeProperties[] = [
 				operation: ['createCompany'],
 			},
 		},
-		description: "",
 	},
 	{
-		displayName: 'Proprietário',
+		displayName: 'Proprietário Name or ID',
 		name: 'owner_idCompany',
 		type: 'options',
 		default: '',
-		required: false,
 		typeOptions: {
 			loadOptionsMethod: 'getCompanyOwners',
 		},
@@ -136,7 +128,7 @@ export const companyOperations: INodeProperties[] = [
 				operation: ['createCompany'],
 			},
 		},
-		description: "",
+		description: 'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
 	},
 	{
 		displayName: 'Propriedades',
@@ -159,9 +151,10 @@ export const companyOperations: INodeProperties[] = [
 				displayName: 'Propriedade',
 				values: [
 					{
-						displayName: 'Nome da propriedade',
+						displayName: 'Nome Da Propriedade Name or ID',
 						name: 'property',
 						type: 'options',
+						description: 'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
 						required: true,
 						typeOptions: {
 							loadOptionsMethod: 'getCompanyPropertiesCreate',
@@ -174,14 +167,13 @@ export const companyOperations: INodeProperties[] = [
 						type: 'string',
 						default: '',
 						required: true,
-						description: '',
 					},
 				],
 			},
 		],
 	},
 	{
-		displayName: 'Associações com Negócios',
+		displayName: 'Associações Com Negócios',
 		name: 'associationDealsCompany',
 		placeholder: 'Adicionar associação com Empresa',
 		type: 'fixedCollection',
@@ -200,11 +192,10 @@ export const companyOperations: INodeProperties[] = [
 				displayName: 'Associações',
 				values: [
 					{
-						displayName: 'ID do Negócio',
+						displayName: 'ID Do Negócio',
 						name: 'deals',
 						type: 'number',
 						default: '',
-						required: false,
 						description: 'ID do Negócio que deseja associar a Empresa',
 						typeOptions: {
 							minValue: 0,
@@ -216,7 +207,7 @@ export const companyOperations: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Associações com Contatos',
+		displayName: 'Associações Com Contatos',
 		name: 'associationContactsCompany',
 		placeholder: 'Adicionar associação com Contato',
 		type: 'fixedCollection',
@@ -235,10 +226,9 @@ export const companyOperations: INodeProperties[] = [
 				displayName: 'Associações',
 				values: [
 					{
-						displayName: 'ID do Contato',
+						displayName: 'ID Do Contato',
 						name: 'contacts',
 						type: 'number',
-						required: false,
 						default: '',
 						description: 'ID do Contato que deseja associar a Empresa',
 						typeOptions: {
@@ -267,12 +257,13 @@ export const companyOperations: INodeProperties[] = [
 		options: [
 			{
 				name: 'Filtros',
-				displayName: 'filters',
+				displayName: 'Filters',
 				values: [
 					{
-						displayName: 'Propriedade',
+						displayName: 'Propriedade Name or ID',
 						name: 'propertyName',
 						type: 'options',
+						description: 'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
 						typeOptions: {
 							loadOptionsMethod: 'getCompanyProperties',
 						},
@@ -288,7 +279,7 @@ export const companyOperations: INodeProperties[] = [
 						required: true,
 					},
 					{
-						displayName: 'Valor a filtrar',
+						displayName: 'Valor a Filtrar',
 						name: 'value',
 						type: 'string',
 						default: ``,
@@ -299,11 +290,10 @@ export const companyOperations: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Propriedades',
+		displayName: 'Propriedade Names or IDs',
 		name: 'propertiesCompanySearch',
 		type: 'multiOptions',
 		default: [],
-		required: false,
 		typeOptions: {
 			loadOptionsMethod: 'getCompanyProperties',
 		},
@@ -312,7 +302,7 @@ export const companyOperations: INodeProperties[] = [
 				operation: ['searchCompany'],
 			},
 		},
-		description: "Propriedades adicionais que você deseja incluir no retorno da sua busca.",
+		description: 'Propriedades adicionais que você deseja incluir no retorno da sua busca. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Limit',
@@ -324,7 +314,7 @@ export const companyOperations: INodeProperties[] = [
 				operation: ['searchCompany'],
 			},
 		},
-		description: "Limite da quantidade de retornos.",
+		description: 'Limite da quantidade de retornos',
 		typeOptions: {
 			maxValue: 100,
 			minValue: 1,
@@ -333,11 +323,11 @@ export const companyOperations: INodeProperties[] = [
 		default: 100,
 	},
 	{
-		displayName: 'Listar todos',
+		displayName: 'Listar Todos',
 		name: 'listAllCompany',
 		type: 'boolean',
 		default: false,
-		description: 'Caso selecionado, vai listar todos resultados da pesquisa de uma só vez.',
+		description: 'Caso selecionado, vai listar todos resultados da pesquisa de uma só vez',
 		displayOptions: { 
 			show: {
 				operation: ['searchCompany'],
@@ -345,7 +335,7 @@ export const companyOperations: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Id da empresa',
+		displayName: 'ID Da Empresa',
 		name: 'idCompany',
 		type: 'string',
 		default: '',
@@ -355,7 +345,6 @@ export const companyOperations: INodeProperties[] = [
 				operation: ['updateCompany'],
 			},
 		},
-		description: "",
 	},
 	{
 		displayName: 'Propriedades',
@@ -377,9 +366,10 @@ export const companyOperations: INodeProperties[] = [
 				displayName: 'Propriedade',
 				values: [
 					{
-						displayName: 'Nome da propriedade',
+						displayName: 'Nome Da Propriedade Name or ID',
 						name: 'property',
 						type: 'options',
+						description: 'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
 						typeOptions: {
 							loadOptionsMethod: 'getCompanyPropertiesUpdate',
 						},
@@ -391,14 +381,13 @@ export const companyOperations: INodeProperties[] = [
 						type: 'string',
 						default: '',
 						required: true,
-						description: '',
 					},
 				],
 			},
 		],
 	},
 	{
-		displayName: 'Id da empresa',
+		displayName: 'ID Da Empresa',
 		name: 'idCompanyDelete',
 		type: 'string',
 		default: '',
@@ -408,6 +397,5 @@ export const companyOperations: INodeProperties[] = [
 				operation: ['deleteCompany'],
 			},
 		},
-		description: "",
 	},
 ];

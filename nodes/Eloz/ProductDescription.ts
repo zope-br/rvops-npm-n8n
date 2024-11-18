@@ -2,94 +2,94 @@ import type { INodeProperties } from 'n8n-workflow';
 
 const filterOptions = [
 	{
-		name: 'Igual a',
+		name: 'Igual A',
 		value: 'EQ',
 	},
 	{
-		name: 'Diferente de',
+		name: 'Diferente De',
 		value: 'NEQ',
 	},
 	{
-		name: 'Maior que',
+		name: 'Maior Que',
 		value: 'GT',
 	},
 	{
-		name: 'Menor que',
+		name: 'Menor Que',
 		value: 'LT',
 	},
 	{
-		name: 'Maior ou igual a',
+		name: 'Maior Ou Igual A',
 		value: 'GTE',
 	},
 	{
-		name: 'Menor ou igual a',
+		name: 'Menor Ou Igual A',
 		value: 'LTE',
 	},
 	{
-		name: 'Contido em uma lista',
+		name: 'Contido Em Uma Lista',
 		value: 'IN',
 	},
 	{
-		name: 'Não contido em uma lista',
+		name: 'Não Contido Em Uma Lista',
 		value: 'NOT_IN',
 	},
 	{
-		name: 'Propriedade existe',
+		name: 'Propriedade Existe',
 		value: 'HAS_PROPERTY',
 	},
 	{
-		name: 'Propriedade não existe',
+		name: 'Propriedade Não Existe',
 		value: 'NOT_HAS_PROPERTY',
 	},
 	{
-		name: 'Contém a palavra específica',
+		name: 'Contém a Palavra Específica',
 		value: 'CONTAINS_TOKEN',
 	},
 	{
-		name: 'Não contém a palavra específica',
+		name: 'Não Contém a Palavra Específica',
 		value: 'NOT_CONTAINS_TOKEN',
 	},
 ];
 
 const productProperties = [
 	{
-		name: 'ID do produto',
+		name: 'ID Do Produto',
 		value: 'id',
 	},
 	{
-		name: 'Nome do produto',
+		name: 'Nome Do Produto',
 		value: 'name',
 	},
 	{
-		name: 'Preço do produto',
+		name: 'Preço Do Produto',
 		value: 'price',
 	},
 	{
-		name: 'Código SKU do produto',
+		name: 'Código SKU Do Produto',
 		value: 'sku',
 	},
 	{
-		name: 'Frequência de cobrança do produto',
+		name: 'Frequência De cobrança Do Produto',
 		value: 'frequency',
 	},
 	{
-		name: 'Custo unitário do produto',
+		name: 'Custo Unitário Do Produto',
 		value: 'unit_cost',
 	},
 	{
-		name: 'URL do produto',
+		name: 'URL Do Produto',
 		value: 'url',
 	},
 	{
-		name: 'Prazo em meses para a renovação do produto',
+		name: 'Prazo Em Meses Para a Renovação Do Produto',
 		value: 'months_term',
 	},
 	{
-		name: 'Descrição do produto',
+		name: 'Descrição Do Produto',
 		value: 'description',
 	},
 	{
-		name: 'Data e hora da última atualização do produto',
+		name: 'Data E Hora Da Última Atualização Do Produto',
 		value: 'updatedAt',
 	},
 ]
@@ -109,44 +109,38 @@ export const productOperations: INodeProperties[] = [
 			{
 				name: 'Get a Product',
 				value: 'getProduct',
-				description: 'Get a product',
 				action: 'Get a product',
 			},
 			{
 				name: 'Create a Product',
 				value: 'createProduct',
-				description: 'Create a product',
 				action: 'Create a product',
 			},
 			{
 				name: 'Search a Product',
 				value: 'searchProduct',
-				description: 'Search a product',
 				action: 'Search a product',
 			},
 			{
 				name: 'Update a Product',
 				value: 'updateProduct',
-				description: 'Update a product',
 				action: 'Update a product',
 			},
 			{
 				name: 'Delete a Product',
 				value: 'deleteProduct',
-				description: 'Delete a product',
 				action: 'Delete a product',
 			},
 			{
-				name: 'List products',
+				name: 'List Products',
 				value: 'listProducts',
-				description: 'List products',
 				action: 'List products',
 			},
 		],
 		default: 'getProduct',
 	},
 	{
-		displayName: 'Id do Produto',
+		displayName: 'ID Do Produto',
 		name: 'idProduct',
 		type: 'string',
 		default: '',
@@ -156,10 +150,9 @@ export const productOperations: INodeProperties[] = [
 				operation: ['getProduct'],
 			},
 		},
-		description: "",
 	},
 	{
-		displayName: 'Nome do Produto',
+		displayName: 'Nome Do Produto',
 		name: 'productname',
 		type: 'string',
 		default: '',
@@ -169,10 +162,9 @@ export const productOperations: INodeProperties[] = [
 				operation: ['createProduct'],
 			},
 		},
-		description: "",
 	},
 	{
-		displayName: 'Preço do Produto',
+		displayName: 'Preço Do Produto',
 		name: 'price',
 		type: 'number',
 		default: '',
@@ -180,16 +172,15 @@ export const productOperations: INodeProperties[] = [
 			minValue: 0,
 			numberPrecision: 2,
 		},
-		required: false,
 		displayOptions: {
 			show: {
 				operation: ['createProduct'],
 			},
 		},
-		description: "Preço em que o Produto é vendido.",
+		description: 'Preço em que o Produto é vendido',
 	},
 	{
-		displayName: 'Custo Unitário do Produto',
+		displayName: 'Custo Unitário Do Produto',
 		name: 'unit_cost',
 		type: 'number',
 		default: '',
@@ -197,13 +188,12 @@ export const productOperations: INodeProperties[] = [
 			minValue: 0,
 			numberPrecision: 2,
 		},
-		required: false,
 		displayOptions: {
 			show: {
 				operation: ['createProduct'],
 			},
 		},
-		description: "Custo unitário/preço de custo do Produto.",
+		description: 'Custo unitário/preço de custo do Produto',
 	},
 	{
 		displayName: 'Propriedades',
@@ -226,9 +216,10 @@ export const productOperations: INodeProperties[] = [
 				displayName: 'Propriedade',
 				values: [
 					{
-						displayName: 'Nome da propriedade',
+						displayName: 'Nome Da Propriedade Name or ID',
 						name: 'property',
 						type: 'options',
+						description: 'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
 						required: true,
 						typeOptions: {
 							loadOptionsMethod: 'getProductPropertiesCreate',
@@ -241,7 +232,6 @@ export const productOperations: INodeProperties[] = [
 						type: 'string',
 						default: '',
 						required: true,
-						description: '',
 					},
 				],
 			},
@@ -264,7 +254,7 @@ export const productOperations: INodeProperties[] = [
 		options: [
 			{
 				name: 'Filtros',
-				displayName: 'filters',
+				displayName: 'Filters',
 				values: [
 					{
 						displayName: 'Propriedade',
@@ -283,7 +273,7 @@ export const productOperations: INodeProperties[] = [
 						required: true,
 					},
 					{
-						displayName: 'Valor a filtrar',
+						displayName: 'Valor a Filtrar',
 						name: 'value',
 						type: 'string',
 						default: ``,
@@ -298,14 +288,13 @@ export const productOperations: INodeProperties[] = [
 		name: 'propertiesProductSearch',
 		type: 'multiOptions',
 		default: [],
-		required: false,
 		options: productProperties,
 		displayOptions: {
 			show: {
 				operation: ['searchProduct'],
 			},
 		},
-		description: "Propriedades adicionais que você deseja incluir no retorno da sua busca.",
+		description: 'Propriedades adicionais que você deseja incluir no retorno da sua busca',
 	},
 	{
 		displayName: 'Limit',
@@ -317,7 +306,7 @@ export const productOperations: INodeProperties[] = [
 				operation: ['searchProduct'],
 			},
 		},
-		description: "Limite da quantidade de retornos.",
+		description: 'Limite da quantidade de retornos',
 		typeOptions: {
 			maxValue: 100,
 			minValue: 1,
@@ -326,11 +315,11 @@ export const productOperations: INodeProperties[] = [
 		default: 100,
 	},
 	{
-		displayName: 'Listar todos',
+		displayName: 'Listar Todos',
 		name: 'listAllProduct',
 		type: 'boolean',
 		default: false,
-		description: 'Caso selecionado, vai listar todos resultados da pesquisa de uma só vez.',
+		description: 'Caso selecionado, vai listar todos resultados da pesquisa de uma só vez',
 		displayOptions: { 
 			show: {
 				operation: ['searchProduct'],
@@ -338,7 +327,7 @@ export const productOperations: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Id do Produto',
+		displayName: 'ID Do Produto',
 		name: 'idProductUpdate',
 		type: 'string',
 		default: '',
@@ -348,7 +337,6 @@ export const productOperations: INodeProperties[] = [
 				operation: ['updateProduct'],
 			},
 		},
-		description: "",
 	},
 	{
 		displayName: 'Propriedades',
@@ -370,9 +358,10 @@ export const productOperations: INodeProperties[] = [
 				displayName: 'Propriedade',
 				values: [
 					{
-						displayName: 'Nome da propriedade',
+						displayName: 'Nome Da Propriedade Name or ID',
 						name: 'property',
 						type: 'options',
+						description: 'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
 						typeOptions: {
 							loadOptionsMethod: 'getProductPropertiesUpdate',
 						},
@@ -384,14 +373,13 @@ export const productOperations: INodeProperties[] = [
 						type: 'string',
 						default: '',
 						required: true,
-						description: '',
 					},
 				],
 			},
 		],
 	},
 	{
-		displayName: 'Id do Produto',
+		displayName: 'ID Do Produto',
 		name: 'idProductDelete',
 		type: 'string',
 		default: '',
@@ -401,7 +389,6 @@ export const productOperations: INodeProperties[] = [
 				operation: ['deleteProduct'],
 			},
 		},
-		description: "",
 	},
 	{
 		displayName: 'Limite',
@@ -422,11 +409,11 @@ export const productOperations: INodeProperties[] = [
 		}
 	},
 	{
-		displayName: 'Listar todos',
+		displayName: 'Listar Todos',
 		name: 'listAllListProducts',
 		type: 'boolean',
 		default: false,
-		description: 'Caso selecionado, vai listar todos resultados da pesquisa de uma só vez.',
+		description: 'Caso selecionado, vai listar todos resultados da pesquisa de uma só vez',
 		displayOptions: { 
 			show: {
 				operation: ['listProducts'],
@@ -434,11 +421,11 @@ export const productOperations: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Monitorar novos valores',
+		displayName: 'Monitorar Novos Valores',
 		name: 'watchProductsList',
 		type: 'boolean',
 		default: true,
-		description: 'Caso selecionado, toda vez que o processo do N8N executar ele vai listar a partir do ultimo cursor.',
+		description: 'Caso selecionado, toda vez que o processo do N8N executar ele vai listar a partir do ultimo cursor',
 		displayOptions: { 
 			show: {
 				operation: ['listProducts'],
@@ -446,21 +433,21 @@ export const productOperations: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Campo de ordenação',
+		displayName: 'Campo De Ordenação',
 		name: 'sortProductsList',
 		type: 'options',
 		options: [
 			{
-				name: 'Data de modificação',
+				name: 'Data De Modificação',
 				value: 'updatedAt',
 			},
 			{
-				name: 'Data de inclusão',
+				name: 'Data De Inclusão',
 				value: 'createdAt',
 			},
 		],
 		default: 'updatedAt', 
-		description: 'Campo em que deseja ordenar os resultados, por padrão ordenamos por data de modificação.',
+		description: 'Campo em que deseja ordenar os resultados, por padrão ordenamos por data de modificação',
 		displayOptions: {
 			show: {
 				watchProductsList: [false],
@@ -468,7 +455,7 @@ export const productOperations: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Tipo de ordenação',
+		displayName: 'Tipo De Ordenação',
 		name: 'orderProductsList',
 		type: 'options',
 		options: [

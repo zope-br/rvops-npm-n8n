@@ -15,14 +15,13 @@ export const userOperations: INodeProperties[] = [
 			{
 				name: 'Create a User',
 				value: 'createUser',
-				description: 'Create a user',
 				action: 'Create a user',
 			},
 		],
 		default: 'createUser',
 	},
 	{
-		displayName: 'Nome do Usuário',
+		displayName: 'Nome Do Usuário',
 		name: 'nameUser',
 		type: 'string',
 		default: '',
@@ -35,7 +34,7 @@ export const userOperations: INodeProperties[] = [
 		description: "Nome inteiro do novo usuário, EX: 'John Doe'",
 	},
 	{
-		displayName: 'Username do Usuário',
+		displayName: 'Username Do Usuário',
 		name: 'username',
 		type: 'string',
 		default: '',
@@ -48,7 +47,7 @@ export const userOperations: INodeProperties[] = [
 		description: "UserName do novo usuário, EX: 'john.doe'",
 	},
 	{
-		displayName: 'E-mail',
+		displayName: 'E-Mail',
 		name: 'emailUser',
 		type: 'string',
 		default: '',
@@ -58,10 +57,10 @@ export const userOperations: INodeProperties[] = [
 				operation: ['createUser'],
 			},
 		},
-		description: "E-mail do novo usuário.",
+		description: 'E-mail do novo usuário',
 	},
 	{
-		displayName: 'É atendente',
+		displayName: 'É Atendente',
 		name: 'isOperator',
 		type: 'boolean',
 		required: true,
@@ -71,7 +70,6 @@ export const userOperations: INodeProperties[] = [
 				operation: ['createUser'],
 			},
 		},
-		description: "",
 	},
 	{
 		displayName: 'Crm Endpoint',

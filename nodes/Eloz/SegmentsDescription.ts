@@ -15,17 +15,16 @@ export const segmentsOperations: INodeProperties[] = [
 			{
 				name: 'Create a Segment',
 				value: 'createSegment',
-				description: 'Create a segment',
 				action: 'Create a segment',
 			},
 			{
-				name: 'Add one contact to Segment',
+				name: 'Add One Contact to Segment',
 				value: 'addContactSegment',
 				description: 'Add just one contact to segment',
 				action: 'Add one contact to segment',
 			},
 			{
-				name: 'Add contacts to Segment',
+				name: 'Add Contacts to Segment',
 				value: 'addManyContactsSegment',
 				description: 'Add many contacts to segment',
 				action: 'Add contacts to segment',
@@ -33,8 +32,7 @@ export const segmentsOperations: INodeProperties[] = [
 			{
 				name: 'List Segments',
 				value: 'listSegment',
-				description: 'List Segments',
-				action: 'List Segments',
+				action: 'List segments',
 			},
 		],
 		default: 'createSegment',
@@ -50,27 +48,25 @@ export const segmentsOperations: INodeProperties[] = [
 				operation: ['createSegment'],
 			},
 		},
-		description: "Nome do Segmento.",
+		description: 'Nome do Segmento',
 	},
 	{
 		displayName: 'Descricão',
 		name: 'descriptionSegmentCreate',
 		type: 'string',
 		default: '',
-		required: false,
 		displayOptions: {
 			show: {
 				operation: ['createSegment'],
 			},
 		},
-		description: "Descrição do Segmento.",
+		description: 'Descrição do Segmento',
 	},
 	{
-		displayName: 'Adicionar contatos ao Segmento',
+		displayName: 'Adicionar Contatos Ao Segmento',
 		name: 'addContactsSegmentCreate',
 		placeholder: 'Adicionar contatos',
 		type: 'fixedCollection',
-		required: false,
 		typeOptions: {
 			multipleValues: true,
 		},
@@ -83,10 +79,10 @@ export const segmentsOperations: INodeProperties[] = [
 		options: [
 			{
 				name: 'Filtros',
-				displayName: 'contacts',
+				displayName: 'Contacts',
 				values: [
 					{
-						displayName: 'ID do contato',
+						displayName: 'ID Do Contato',
 						name: 'value',
 						type: 'number',
 						default: ``,
@@ -101,7 +97,7 @@ export const segmentsOperations: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'ID do Segmento',
+		displayName: 'ID Do Segmento',
 		name: 'idSegmentAddContact',
 		type: 'number',
 		default: '',
@@ -115,10 +111,10 @@ export const segmentsOperations: INodeProperties[] = [
 			minValue: 1,
 			numberPrecision: 0,
 		},
-		description: "ID do seguimento.",
+		description: 'ID do seguimento',
 	},
 	{
-		displayName: 'ID do contato',
+		displayName: 'ID Do Contato',
 		name: 'idContactAddContact',
 		type: 'number',
 		default: '',
@@ -132,10 +128,10 @@ export const segmentsOperations: INodeProperties[] = [
 			minValue: 1,
 			numberPrecision: 0,
 		},
-		description: "ID do contato a ser adicionado ao Segmento.",
+		description: 'ID do contato a ser adicionado ao Segmento',
 	},
 	{
-		displayName: 'ID do Segmento',
+		displayName: 'ID Do Segmento',
 		name: 'idSegmentAddManyContact',
 		type: 'number',
 		default: '',
@@ -149,10 +145,10 @@ export const segmentsOperations: INodeProperties[] = [
 			minValue: 1,
 			numberPrecision: 0,
 		},
-		description: "ID do seguimento.",
+		description: 'ID do seguimento',
 	},
 	{
-		displayName: 'Adicionar contatos ao Segmento',
+		displayName: 'Adicionar Contatos Ao Segmento',
 		name: 'addContactsAddManyContact',
 		placeholder: 'Adicionar contatos',
 		type: 'fixedCollection',
@@ -169,10 +165,10 @@ export const segmentsOperations: INodeProperties[] = [
 		options: [
 			{
 				name: 'Filtros',
-				displayName: 'filters',
+				displayName: 'Filters',
 				values: [
 					{
-						displayName: 'ID do contato',
+						displayName: 'ID Do Contato',
 						name: 'value',
 						type: 'number',
 						default: ``,
@@ -197,7 +193,7 @@ export const segmentsOperations: INodeProperties[] = [
 				operation: ['listSegment'],
 			},
 		},
-		description: "Limite da quantidade de retornos.",
+		description: 'Limite da quantidade de retornos',
 		typeOptions: {
 			maxValue: 100,
 			minValue: 1,
@@ -206,11 +202,11 @@ export const segmentsOperations: INodeProperties[] = [
 		default: 100,
 	},
 	{
-		displayName: 'Listar todos',
+		displayName: 'Listar Todos',
 		name: 'listAllSegments',
 		type: 'boolean',
 		default: false,
-		description: 'Caso selecionado, vai listar todos resultados da listagem de uma só vez.',
+		description: 'Caso selecionado, vai listar todos resultados da listagem de uma só vez',
 		displayOptions: { 
 			show: {
 				operation: ['listSegment'],
@@ -218,11 +214,11 @@ export const segmentsOperations: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Monitorar novos valores',
+		displayName: 'Monitorar Novos Valores',
 		name: 'watchListSegments',
 		type: 'boolean',
 		default: true,
-		description: 'Caso selecionado, toda vez que o processo do N8N executar ele vai listar a partir do ultimo cursor.',
+		description: 'Caso selecionado, toda vez que o processo do N8N executar ele vai listar a partir do ultimo cursor',
 		displayOptions: { 
 			show: {
 				operation: ['listSegment'],
@@ -230,21 +226,21 @@ export const segmentsOperations: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Campo de ordenação',
+		displayName: 'Campo De Ordenação',
 		name: 'sortListSegments',
 		type: 'options',
 		options: [
 			{
-				name: 'Data de modificação',
+				name: 'Data De Modificação',
 				value: 'date_modified',
 			},
 			{
-				name: 'Data de inclusão',
+				name: 'Data De Inclusão',
 				value: 'date_added',
 			},
 		],
 		default: 'date_modified', 
-		description: 'Campo em que deseja ordenar os resultados, por padrão ordenamos por data de modificação.',
+		description: 'Campo em que deseja ordenar os resultados, por padrão ordenamos por data de modificação',
 		displayOptions: {
 			show: {
 				watchListSegments: [false],
@@ -252,7 +248,7 @@ export const segmentsOperations: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Tipo de ordenação',
+		displayName: 'Tipo De Ordenação',
 		name: 'orderListSegments',
 		type: 'options',
 		options: [

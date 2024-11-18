@@ -2,51 +2,51 @@ import type { INodeProperties } from 'n8n-workflow';
 
 const filterOptions = [
 	{
-		name: 'Igual a',
+		name: 'Igual A',
 		value: 'EQ',
 	},
 	{
-		name: 'Diferente de',
+		name: 'Diferente De',
 		value: 'NEQ',
 	},
 	{
-		name: 'Maior que',
+		name: 'Maior Que',
 		value: 'GT',
 	},
 	{
-		name: 'Menor que',
+		name: 'Menor Que',
 		value: 'LT',
 	},
 	{
-		name: 'Maior ou igual a',
+		name: 'Maior Ou Igual A',
 		value: 'GTE',
 	},
 	{
-		name: 'Menor ou igual a',
+		name: 'Menor Ou Igual A',
 		value: 'LTE',
 	},
 	{
-		name: 'Contido em uma lista',
+		name: 'Contido Em Uma Lista',
 		value: 'IN',
 	},
 	{
-		name: 'Não contido em uma lista',
+		name: 'Não Contido Em Uma Lista',
 		value: 'NOT_IN',
 	},
 	{
-		name: 'Propriedade existe',
+		name: 'Propriedade Existe',
 		value: 'HAS_PROPERTY',
 	},
 	{
-		name: 'Propriedade não existe',
+		name: 'Propriedade Não Existe',
 		value: 'NOT_HAS_PROPERTY',
 	},
 	{
-		name: 'Contém a palavra específica',
+		name: 'Contém a Palavra Específica',
 		value: 'CONTAINS_TOKEN',
 	},
 	{
-		name: 'Não contém a palavra específica',
+		name: 'Não Contém a Palavra Específica',
 		value: 'NOT_CONTAINS_TOKEN',
 	},
 ];
@@ -66,44 +66,38 @@ export const dealOperations: INodeProperties[] = [
 			{
 				name: 'Get a Deal',
 				value: 'getDeal',
-				description: 'Get a deal',
 				action: 'Get a deal',
 			},
 			{
 				name: 'Create a Deal',
 				value: 'createDeal',
-				description: 'Create a deal',
 				action: 'Create a deal',
 			},
 			{
 				name: 'Search a Deal',
 				value: 'searchDeal',
-				description: 'Search a deal',
 				action: 'Search a deal',
 			},
 			{
 				name: 'Update a Deal',
 				value: 'updateDeal',
-				description: 'Update a deal',
 				action: 'Update a deal',
 			},
 			{
 				name: 'Delete a Deal',
 				value: 'deleteDeal',
-				description: 'Delete a deal',
 				action: 'Delete a deal',
 			},
 			{
 				name: 'List Deals',
 				value: 'listDeals',
-				description: 'List deals',
 				action: 'List deals',
 			},
 		],
 		default: 'getDeal',
 	},
 	{
-		displayName: 'Id do negócio',
+		displayName: 'ID Do Negócio',
 		name: 'id',
 		type: 'number',
 		default: '',
@@ -117,10 +111,9 @@ export const dealOperations: INodeProperties[] = [
 				operation: ['getDeal'],
 			},
 		},
-		description: "",
 	},
 	{
-		displayName: 'Pipeline',
+		displayName: 'Pipeline Name or ID',
 		name: 'pipeline_id',
 		type: 'options',
 		default: '',
@@ -133,10 +126,10 @@ export const dealOperations: INodeProperties[] = [
 				operation: ['createDeal'],
 			},
 		},
-		description: "",
+		description: 'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
 	},
 	{
-		displayName: 'Etapa',
+		displayName: 'Etapa Name or ID',
 		name: 'stage_id',
 		type: 'options',
 		default: '',
@@ -150,10 +143,10 @@ export const dealOperations: INodeProperties[] = [
 				operation: ['createDeal'],
 			},
 		},
-		description: "",
+		description: 'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
 	},
 	{
-		displayName: 'Proprietário',
+		displayName: 'Proprietário Name or ID',
 		name: 'owner_id',
 		type: 'options',
 		default: '',
@@ -166,13 +159,13 @@ export const dealOperations: INodeProperties[] = [
 				operation: ['createDeal'],
 			},
 		},
-		description: "",
+		description: 'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
 	},
 	{
 		displayName: 'Prioridade',
 		name: 'priority',
 		type: 'options',
-		default: '',
+		default: undefined,
 		required: true,
 		options: [
 			{
@@ -193,7 +186,6 @@ export const dealOperations: INodeProperties[] = [
 				operation: ['createDeal'],
 			},
 		},
-		description: "",
 	},
 	{
 		displayName: 'Propriedades',
@@ -215,9 +207,10 @@ export const dealOperations: INodeProperties[] = [
 				displayName: 'Propriedade',
 				values: [
 					{
-						displayName: 'Nome da propriedade',
+						displayName: 'Nome Da Propriedade Name or ID',
 						name: 'property',
 						type: 'options',
+						description: 'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
 						required: true,
 						typeOptions: {
 							loadOptionsMethod: 'getDealPropertiesCreate',
@@ -230,14 +223,13 @@ export const dealOperations: INodeProperties[] = [
 						type: 'string',
 						default: '',
 						required: true,
-						description: '',
 					},
 				],
 			},
 		],
 	},
 	{
-		displayName: 'Associações com Empresas',
+		displayName: 'Associações Com Empresas',
 		name: 'associationCompanys',
 		placeholder: 'Adicionar associação com Empresa',
 		type: 'fixedCollection',
@@ -256,11 +248,10 @@ export const dealOperations: INodeProperties[] = [
 				displayName: 'Associações',
 				values: [
 					{
-						displayName: 'ID da Empresa',
+						displayName: 'ID Da Empresa',
 						name: 'companies',
 						type: 'number',
 						default: '',
-						required: false,
 						description: 'ID da Empressa que deseja associar o contato',
 						typeOptions: {
 							minValue: 0,
@@ -272,7 +263,7 @@ export const dealOperations: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Associações com Contatos',
+		displayName: 'Associações Com Contatos',
 		name: 'associationContacts',
 		placeholder: 'Adicionar associação com Contato',
 		type: 'fixedCollection',
@@ -291,10 +282,9 @@ export const dealOperations: INodeProperties[] = [
 				displayName: 'Associações',
 				values: [
 					{
-						displayName: 'ID do Contato',
+						displayName: 'ID Do Contato',
 						name: 'contacts',
 						type: 'number',
-						required: false,
 						default: '',
 						description: 'ID do Contato que deseja associar o negócio',
 						typeOptions: {
@@ -307,11 +297,10 @@ export const dealOperations: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Associações com Produtos',
+		displayName: 'Associações Com Produtos',
 		name: 'associationsProducts',
 		placeholder: 'Adicionar produtos',
 		type: 'fixedCollection',
-		required: false,
 		typeOptions: {
 			multipleValues: true,
 		},
@@ -324,12 +313,13 @@ export const dealOperations: INodeProperties[] = [
 		options: [
 			{
 				name: 'productsItems',
-				displayName: 'Detalhes produtos',
+				displayName: 'Detalhes Produtos',
 				values: [
 					{
-						displayName: 'Produto',
+						displayName: 'Produto Name or ID',
 						name: 'id',
 						type: 'options',
+						description: 'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
 						required: true,
 						typeOptions: {
 							loadOptionsMethod: 'getProductsToDeal',
@@ -342,7 +332,6 @@ export const dealOperations: INodeProperties[] = [
 						type: 'number',
 						default: '',
 						required: true,
-						description: '',
 						typeOptions: {
 							minValue: 1,
 							numberPrecision: 3,
@@ -354,7 +343,6 @@ export const dealOperations: INodeProperties[] = [
 						type: 'number',
 						default: '',
 						required: true,
-						description: '',
 						typeOptions: {
 							minValue: 0,
 							numberPrecision: 2,
@@ -381,12 +369,13 @@ export const dealOperations: INodeProperties[] = [
 		options: [
 			{
 				name: 'Filtros',
-				displayName: 'filters',
+				displayName: 'Filters',
 				values: [
 					{
-						displayName: 'Propriedade',
+						displayName: 'Propriedade Name or ID',
 						name: 'propertyName',
 						type: 'options',
+						description: 'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
 						typeOptions: {
 							loadOptionsMethod: 'getDealProperties',
 						},
@@ -402,7 +391,7 @@ export const dealOperations: INodeProperties[] = [
 						required: true,
 					},
 					{
-						displayName: 'Valor a filtrar',
+						displayName: 'Valor a Filtrar',
 						name: 'value',
 						type: 'string',
 						default: ``,
@@ -413,11 +402,10 @@ export const dealOperations: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Propriedades',
+		displayName: 'Propriedade Names or IDs',
 		name: 'propertiesDeal',
 		type: 'multiOptions',
 		default: [],
-		required: false,
 		typeOptions: {
 			loadOptionsMethod: 'getDealProperties',
 		},
@@ -426,7 +414,7 @@ export const dealOperations: INodeProperties[] = [
 				operation: ['searchDeal'],
 			},
 		},
-		description: "Propriedades adicionais que você deseja incluir no retorno da sua busca.",
+		description: 'Propriedades adicionais que você deseja incluir no retorno da sua busca. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.',
 	},
 	{
 		displayName: 'Limit',
@@ -438,7 +426,7 @@ export const dealOperations: INodeProperties[] = [
 				operation: ['searchDeal'],
 			},
 		},
-		description: "Limite da quantidade de retornos.",
+		description: 'Limite da quantidade de retornos',
 		typeOptions: {
 			maxValue: 100,
 			minValue: 1,
@@ -447,11 +435,11 @@ export const dealOperations: INodeProperties[] = [
 		default: 100,
 	},
 	{
-		displayName: 'Listar todos',
+		displayName: 'Listar Todos',
 		name: 'listAllDeal',
 		type: 'boolean',
 		default: false,
-		description: 'Caso selecionado, vai listar todos resultados da pesquisa de uma só vez.',
+		description: 'Caso selecionado, vai listar todos resultados da pesquisa de uma só vez',
 		displayOptions: { 
 			show: {
 				operation: ['searchDeal'],
@@ -459,7 +447,7 @@ export const dealOperations: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Id do negócio',
+		displayName: 'ID Do Negócio',
 		name: 'idDeal',
 		type: 'number',
 		default: '',
@@ -473,7 +461,6 @@ export const dealOperations: INodeProperties[] = [
 				operation: ['updateDeal'],
 			},
 		},
-		description: "",
 	},
 	{
 		displayName: 'Propriedades',
@@ -495,9 +482,10 @@ export const dealOperations: INodeProperties[] = [
 				displayName: 'Propriedade',
 				values: [
 					{
-						displayName: 'Nome da propriedade',
+						displayName: 'Nome Da Propriedade Name or ID',
 						name: 'property',
 						type: 'options',
+						description: 'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
 						typeOptions: {
 							loadOptionsMethod: 'getDealPropertiesUpdate',
 						},
@@ -509,14 +497,13 @@ export const dealOperations: INodeProperties[] = [
 						type: 'string',
 						default: '',
 						required: true,
-						description: '',
 					},
 				],
 			},
 		],
 	},
 	{
-		displayName: 'Id do negócio',
+		displayName: 'ID Do Negócio',
 		name: 'idDealDelete',
 		type: 'number',
 		typeOptions: {
@@ -530,7 +517,6 @@ export const dealOperations: INodeProperties[] = [
 				operation: ['deleteDeal'],
 			},
 		},
-		description: "",
 	},
 	{
 		displayName: 'Limite',
@@ -551,11 +537,10 @@ export const dealOperations: INodeProperties[] = [
 		}
 	},
 	{
-		displayName: 'Propriedades',
+		displayName: 'Propriedade Names or IDs',
 		name: 'propertiesListDeals',
 		type: 'multiOptions',
 		default: [],
-		required: false,
 		typeOptions: {
 			loadOptionsMethod: 'getDealProperties',
 		},
@@ -564,14 +549,14 @@ export const dealOperations: INodeProperties[] = [
 				operation: ['listDeals'],
 			},
 		},
-		description: "Propriedades adicionais que você deseja incluir no retorno da sua busca.",
+		description: 'Propriedades adicionais que você deseja incluir no retorno da sua busca. Choose from the list, or specify IDs using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>.',
 	},
 	{
-		displayName: 'Listar todos',
+		displayName: 'Listar Todos',
 		name: 'listAllListDeals',
 		type: 'boolean',
 		default: false,
-		description: 'Caso selecionado, vai listar todos resultados da pesquisa de uma só vez.',
+		description: 'Caso selecionado, vai listar todos resultados da pesquisa de uma só vez',
 		displayOptions: { 
 			show: {
 				operation: ['listDeals'],
@@ -579,11 +564,11 @@ export const dealOperations: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Monitorar novos valores',
+		displayName: 'Monitorar Novos Valores',
 		name: 'watchDealsList',
 		type: 'boolean',
 		default: true,
-		description: 'Caso selecionado, toda vez que o processo do N8N executar ele vai listar a partir do ultimo cursor.',
+		description: 'Caso selecionado, toda vez que o processo do N8N executar ele vai listar a partir do ultimo cursor',
 		displayOptions: { 
 			show: {
 				operation: ['listDeals'],
@@ -591,21 +576,21 @@ export const dealOperations: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Campo de ordenação',
+		displayName: 'Campo De Ordenação',
 		name: 'sortDealsList',
 		type: 'options',
 		options: [
 			{
-				name: 'Data de modificação',
+				name: 'Data De Modificação',
 				value: 'updatedAt',
 			},
 			{
-				name: 'Data de inclusão',
+				name: 'Data De Inclusão',
 				value: 'createdAt',
 			},
 		],
 		default: 'updatedAt', 
-		description: 'Campo em que deseja ordenar os resultados, por padrão ordenamos por data de modificação.',
+		description: 'Campo em que deseja ordenar os resultados, por padrão ordenamos por data de modificação',
 		displayOptions: {
 			show: {
 				watchDealsList: [false],
@@ -613,7 +598,7 @@ export const dealOperations: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Tipo de ordenação',
+		displayName: 'Tipo De Ordenação',
 		name: 'orderDealsList',
 		type: 'options',
 		options: [

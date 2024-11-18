@@ -2,13 +2,13 @@ import type { INodeProperties } from 'n8n-workflow';
 
 const types = [
 	{
-		name: 'To do',
+		name: 'To Do',
 		value: 'todo',
 	},{
 		name: 'Ligação',
 		value: 'call',
 	},{
-		name: 'E-mail',
+		name: 'E-Mail',
 		value: 'email',
 	},{
 		name: 'WhatsApp',
@@ -30,38 +30,33 @@ export const taskOperations: INodeProperties[] = [
 			{
 				name: 'Get a Task',
 				value: 'getTask',
-				description: 'Get a task',
 				action: 'Get a task',
 			},
 			{
 				name: 'Create a Task',
 				value: 'createTask',
-				description: 'Create a task',
 				action: 'Create a task',
 			},
 			{
 				name: 'Update a Task',
 				value: 'updateTask',
-				description: 'Update a task',
 				action: 'Update a task',
 			},
 			{
 				name: 'Delete a Task',
 				value: 'deleteTask',
-				description: 'Delete a task',
 				action: 'Delete a task',
 			},
 			{
 				name: 'List Tasks',
 				value: 'listTasks',
-				description: 'List Tasks',
-				action: 'List Tasks',
+				action: 'List tasks',
 			},
 		],
 		default: 'getTask',
 	},
 	{
-		displayName: 'Id da Tarefa',
+		displayName: 'ID Da Tarefa',
 		name: 'idTask',
 		type: 'number',
 		default: '',
@@ -75,10 +70,9 @@ export const taskOperations: INodeProperties[] = [
 				operation: ['getTask'],
 			},
 		},
-		description: "",
 	},
 	{
-		displayName: 'Nome da Tarefa',
+		displayName: 'Nome Da Tarefa',
 		name: 'taskname',
 		type: 'string',
 		default: '',
@@ -88,10 +82,9 @@ export const taskOperations: INodeProperties[] = [
 				operation: ['createTask'],
 			},
 		},
-		description: "",
 	},
 	{
-		displayName: 'Proprietário da Tarefa',
+		displayName: 'Proprietário Da Tarefa Name or ID',
 		name: 'owner_idTask',
 		type: 'options',
 		default: '',
@@ -104,14 +97,13 @@ export const taskOperations: INodeProperties[] = [
 				operation: ['createTask'],
 			},
 		},
-		description: "",
+		description: 'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
 	},
 	{
-		displayName: 'Descricão da Tarefa',
+		displayName: 'Descricão Da Tarefa',
 		name: 'descriptionTask',
 		type: 'string',
 		default: '',
-		required: false,
 		typeOptions: {
 			rows: 4,
 		},
@@ -120,10 +112,9 @@ export const taskOperations: INodeProperties[] = [
 				operation: ['createTask'],
 			},
 		},
-		description: "",
 	},
 	{
-		displayName: 'Data e hora do vencimento da Tarefa',
+		displayName: 'Data E Hora Do Vencimento Da Tarefa',
 		name: 'due_dateTask',
 		type: 'dateTime',
 		default: '',
@@ -133,13 +124,12 @@ export const taskOperations: INodeProperties[] = [
 				operation: ['createTask'],
 			},
 		},
-		description: "",
 	},
 	{
 		displayName: 'Prioridade',
 		name: 'priorityTask',
 		type: 'options',
-		default: '',
+		default: undefined,
 		required: true,
 		options: [
 			{
@@ -160,7 +150,6 @@ export const taskOperations: INodeProperties[] = [
 				operation: ['createTask'],
 			},
 		},
-		description: "",
 	},
 	{
 		displayName: 'Tipo',
@@ -174,23 +163,21 @@ export const taskOperations: INodeProperties[] = [
 				operation: ['createTask'],
 			},
 		},
-		description: "",
 	},
 	{
 		displayName: 'Origem',
 		name: 'sourceTask',
 		type: 'string',
 		default: 'N8N',
-		required: false,
 		displayOptions: {
 			show: {
 				operation: ['createTask'],
 			},
 		},
-		description: "Origem da Tarefa.",
+		description: 'Origem da Tarefa',
 	},
 	{
-		displayName: 'Associações com Negócios',
+		displayName: 'Associações Com Negócios',
 		name: 'associationDealsTask',
 		placeholder: 'Adicionar associação com Empresa',
 		type: 'fixedCollection',
@@ -209,11 +196,10 @@ export const taskOperations: INodeProperties[] = [
 				displayName: 'Associações',
 				values: [
 					{
-						displayName: 'ID do Negócio',
+						displayName: 'ID Do Negócio',
 						name: 'deals',
 						type: 'number',
 						default: '',
-						required: false,
 						description: 'ID do Negócio que deseja associar a Tarefa',
 						typeOptions: {
 							minValue: 0,
@@ -225,7 +211,7 @@ export const taskOperations: INodeProperties[] = [
 		],
 	},
 	{
-		displayName: 'Associações com Contatos',
+		displayName: 'Associações Com Contatos',
 		name: 'associationContactsTask',
 		placeholder: 'Adicionar associação com Contato',
 		type: 'fixedCollection',
@@ -244,10 +230,9 @@ export const taskOperations: INodeProperties[] = [
 				displayName: 'Associações',
 				values: [
 					{
-						displayName: 'ID do Contato',
+						displayName: 'ID Do Contato',
 						name: 'contacts',
 						type: 'number',
-						required: false,
 						default: '',
 						description: 'ID do Contato que deseja associar a Tarefa',
 						typeOptions: {
@@ -269,7 +254,7 @@ export const taskOperations: INodeProperties[] = [
 				operation: ['listTasks'],
 			},
 		},
-		description: "Limite da quantidade de retornos.",
+		description: 'Limite da quantidade de retornos',
 		typeOptions: {
 			maxValue: 100,
 			minValue: 1,
@@ -278,11 +263,11 @@ export const taskOperations: INodeProperties[] = [
 		default: 100,
 	},
 	{
-		displayName: 'Listar todos',
+		displayName: 'Listar Todos',
 		name: 'listAllTask',
 		type: 'boolean',
 		default: false,
-		description: 'Caso selecionado, vai listar todos resultados da pesquisa de uma só vez.',
+		description: 'Caso selecionado, vai listar todos resultados da pesquisa de uma só vez',
 		displayOptions: { 
 			show: {
 				operation: ['listTasks'],
@@ -290,11 +275,11 @@ export const taskOperations: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Monitorar novos valores',
+		displayName: 'Monitorar Novos Valores',
 		name: 'watchListTask',
 		type: 'boolean',
 		default: true,
-		description: 'Caso selecionado, toda vez que o processo do N8N executar ele vai listar a partir do ultimo cursor.',
+		description: 'Caso selecionado, toda vez que o processo do N8N executar ele vai listar a partir do ultimo cursor',
 		displayOptions: { 
 			show: {
 				operation: ['listTasks'],
@@ -302,21 +287,21 @@ export const taskOperations: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Campo de ordenação',
+		displayName: 'Campo De Ordenação',
 		name: 'sortListTask',
 		type: 'options',
 		options: [
 			{
-				name: 'Data de modificação',
+				name: 'Data De Modificação',
 				value: 'updatedAt',
 			},
 			{
-				name: 'Data de inclusão',
+				name: 'Data De Inclusão',
 				value: 'createdAt',
 			},
 		],
 		default: 'updatedAt', 
-		description: 'Campo em que deseja ordenar os resultados, por padrão ordenamos por data de modificação.',
+		description: 'Campo em que deseja ordenar os resultados, por padrão ordenamos por data de modificação',
 		displayOptions: {
 			show: {
 				watchListTask: [false],
@@ -324,7 +309,7 @@ export const taskOperations: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Tipo de ordenação',
+		displayName: 'Tipo De Ordenação',
 		name: 'orderListTask',
 		type: 'options',
 		options: [
@@ -346,7 +331,7 @@ export const taskOperations: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Id da tarefa',
+		displayName: 'ID Da Tarefa',
 		name: 'idTaskUpdate',
 		type: 'number',
 		default: '',
@@ -360,27 +345,24 @@ export const taskOperations: INodeProperties[] = [
 				operation: ['updateTask'],
 			},
 		},
-		description: "ID da tarefa que deseja atualizar.",
+		description: 'ID da tarefa que deseja atualizar',
 	},
 	{
-		displayName: 'Nome da Tarefa',
+		displayName: 'Nome Da Tarefa',
 		name: 'tasknameUpdate',
 		type: 'string',
 		default: '',
-		required: false,
 		displayOptions: {
 			show: {
 				operation: ['updateTask'],
 			},
 		},
-		description: "",
 	},
 	{
-		displayName: 'Proprietário da Tarefa',
+		displayName: 'Proprietário Da Tarefa Name or ID',
 		name: 'owner_idTaskUpdate',
 		type: 'options',
-		default: [],
-		required: false,
+		default: '',
 		typeOptions: {
 			loadOptionsMethod: 'getTasksOwners',
 		},
@@ -389,40 +371,35 @@ export const taskOperations: INodeProperties[] = [
 				operation: ['updateTask'],
 			},
 		},
-		description: "",
+		description: 'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code-examples/expressions/">expression</a>',
 	},
 	{
-		displayName: 'Descricão da Tarefa',
+		displayName: 'Descricão Da Tarefa',
 		name: 'descriptionTaskUpdate',
 		type: 'string',
 		default: '',
-		required: false,
 		displayOptions: {
 			show: {
 				operation: ['updateTask'],
 			},
 		},
-		description: "",
 	},
 	{
-		displayName: 'Data e hora do vencimento da Tarefa',
+		displayName: 'Data E Hora Do Vencimento Da Tarefa',
 		name: 'due_dateTaskUpdate',
 		type: 'dateTime',
 		default: '',
-		required: false,
 		displayOptions: {
 			show: {
 				operation: ['updateTask'],
 			},
 		},
-		description: "",
 	},
 	{
 		displayName: 'Prioridade',
 		name: 'priorityTaskUpdate',
 		type: 'options',
-		default: [],
-		required: false,
+		default: undefined,
 		options: [
 			{
 				"value": "1",
@@ -442,7 +419,6 @@ export const taskOperations: INodeProperties[] = [
 				operation: ['updateTask'],
 			},
 		},
-		description: "",
 	},
 	{
 		displayName: 'Tipo',
@@ -456,23 +432,21 @@ export const taskOperations: INodeProperties[] = [
 				operation: ['updateTask'],
 			},
 		},
-		description: "",
 	},
 	{
 		displayName: 'Origem',
 		name: 'sourceTaskUpdate',
 		type: 'string',
 		default: '',
-		required: false,
 		displayOptions: {
 			show: {
 				operation: ['updateTask'],
 			},
 		},
-		description: "Origem da Tarefa.",
+		description: 'Origem da Tarefa',
 	},
 	{
-		displayName: 'Id da tarefa',
+		displayName: 'ID Da Tarefa',
 		name: 'idTaskDelete',
 		type: 'number',
 		default: '',
@@ -486,6 +460,5 @@ export const taskOperations: INodeProperties[] = [
 				operation: ['deleteTask'],
 			},
 		},
-		description: "",
 	},
 ];

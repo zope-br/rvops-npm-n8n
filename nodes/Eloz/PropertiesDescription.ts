@@ -2,11 +2,11 @@ import type { INodeProperties } from 'n8n-workflow';
 
 const fields = [
     { name: 'Data', value: 'date' },
-    { name: 'Data e Hora', value: 'datetime' },
+    { name: 'Data E Hora', value: 'datetime' },
     { name: 'Seleção', value: 'select' },
     { name: 'Seleção Múltipla', value: 'multiselect' },
     { name: 'Texto', value: 'text' },
-    { name: 'Área de Texto', value: 'textarea' },
+    { name: 'Área De Texto', value: 'textarea' },
     { name: 'Hora', value: 'time' },
     { name: 'Número', value: 'number' },
     { name: 'Usuário', value: 'user' }
@@ -28,20 +28,18 @@ export const propertiesOperations: INodeProperties[] = [
 			{
 				name: 'Create a Propertie',
 				value: 'createProperties',
-				description: 'Create a propertie',
 				action: 'Create a propertie',
 			},
 			{
 				name: 'List Properties',
 				value: 'listProperties',
-				description: 'List properties',
 				action: 'List properties',
 			},
 		],
 		default: 'createProperties',
 	},
 	{
-		displayName: 'Objeto da propriedade',
+		displayName: 'Objeto Da Propriedade',
 		name: 'objectProperty',
 		type: 'options',
 		default: 'contact',
@@ -65,10 +63,10 @@ export const propertiesOperations: INodeProperties[] = [
 				operation: ['createProperties'],
 			},
 		},
-		description: "Objeto em que deseja criar as propriedades.",
+		description: 'Objeto em que deseja criar as propriedades',
 	},
 	{
-		displayName: 'Nome da nova propriedade',
+		displayName: 'Nome Da Nova Propriedade',
 		name: 'nameProperty',
 		type: 'string',
 		default: '',
@@ -78,10 +76,10 @@ export const propertiesOperations: INodeProperties[] = [
 				operation: ['createProperties'],
 			},
 		},
-		description: "Nome da propriedade que deseja criar.",
+		description: 'Nome da propriedade que deseja criar',
 	},
 	{
-		displayName: 'Tipo da propriedade',
+		displayName: 'Tipo Da Propriedade',
 		name: 'typeProperty',
 		type: 'options',
 		default: [],
@@ -92,14 +90,13 @@ export const propertiesOperations: INodeProperties[] = [
 				operation: ['createProperties'],
 			},
 		},
-		description: "Tipo da propriedade em que deseja criar.",
+		description: 'Tipo da propriedade em que deseja criar',
 	},
 	{
-		displayName: 'Valor da propriedade',
+		displayName: 'Valor Da Propriedade',
 		name: 'propertiesCreateProperty',
 		placeholder: 'Adicionar novo valor',
 		type: 'fixedCollection',
-		required: false,
 		typeOptions: {
 			multipleValues: true,
 		},
@@ -120,27 +117,27 @@ export const propertiesOperations: INodeProperties[] = [
 						type: 'string',
 						required: true,
 						default: '',
-						description: "Nome visivel da opção. Ex: 'Opção 1'",
+						description: 'Nome visivel da opção. Ex: \'Opção 1\'.',
 					},
 					{
-						displayName: 'Valor interno',
+						displayName: 'Valor Interno',
 						name: 'value',
 						type: 'string',
 						required: true,
 						default: '',
-						description: "Valor interno da opção. Ex: 'option-1'",
+						description: 'Valor interno da opção. Ex: \'option-1\'.',
 					}
 				]
 			}
 		],
-		description: "Caso selecionado Select ou MultiSelect é necessário informar ao menos uma opção de valor.",
+		description: 'Caso selecionado Select ou MultiSelect é necessário informar ao menos uma opção de valor',
 	},
 	{
 		displayName: 'Obrigatório',
 		name: 'isRequired',
 		type: 'boolean',
 		default: false, 
-		description: 'Caso selecionado, a propriedade será obrigatória.',
+		description: 'Caso selecionado, a propriedade será obrigatória',
 		displayOptions: {
 			show: {
 				operation: ['createProperties'],
@@ -148,11 +145,11 @@ export const propertiesOperations: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Identificador unico',
+		displayName: 'Identificador Unico',
 		name: 'isUniqueIdentifier',
 		type: 'boolean',
 		default: false, 
-		description: 'Caso selecionado, a propriedade será uma identificação unica, não podendo ter valores iguais entre os objetos.',
+		description: 'Caso selecionado, a propriedade será uma identificação unica, não podendo ter valores iguais entre os objetos',
 		displayOptions: {
 			show: {
 				typeProperty: ['text', 'textarea', 'number'],
@@ -160,7 +157,7 @@ export const propertiesOperations: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Objeto ',
+		displayName: 'Objeto',
 		name: 'objectLIst',
 		type: 'options',
 		default: 'contact',
@@ -184,7 +181,7 @@ export const propertiesOperations: INodeProperties[] = [
 				operation: ['listProperties'],
 			},
 		},
-		description: "Objeto em que deseja listar as propriedades.",
+		description: 'Objeto em que deseja listar as propriedades',
 	},
 	
 ];

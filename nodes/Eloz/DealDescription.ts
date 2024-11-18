@@ -64,14 +64,24 @@ export const dealOperations: INodeProperties[] = [
 		},
 		options: [
 			{
+				name: 'Create a Deal',
+				value: 'createDeal',
+				action: 'Create a deal',
+			},
+			{
+				name: 'Delete a Deal',
+				value: 'deleteDeal',
+				action: 'Delete a deal',
+			},
+			{
 				name: 'Get a Deal',
 				value: 'getDeal',
 				action: 'Get a deal',
 			},
 			{
-				name: 'Create a Deal',
-				value: 'createDeal',
-				action: 'Create a deal',
+				name: 'List Deals',
+				value: 'listDeals',
+				action: 'List deals',
 			},
 			{
 				name: 'Search a Deal',
@@ -82,16 +92,6 @@ export const dealOperations: INodeProperties[] = [
 				name: 'Update a Deal',
 				value: 'updateDeal',
 				action: 'Update a deal',
-			},
-			{
-				name: 'Delete a Deal',
-				value: 'deleteDeal',
-				action: 'Delete a deal',
-			},
-			{
-				name: 'List Deals',
-				value: 'listDeals',
-				action: 'List deals',
 			},
 		],
 		default: 'getDeal',

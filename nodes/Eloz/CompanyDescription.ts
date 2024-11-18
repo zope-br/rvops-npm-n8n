@@ -64,14 +64,19 @@ export const companyOperations: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Get a Company',
-				value: 'getCompany',
-				action: 'Get a company',
-			},
-			{
 				name: 'Create a Company',
 				value: 'createCompany',
 				action: 'Create a company',
+			},
+			{
+				name: 'Delete a Company',
+				value: 'deleteCompany',
+				action: 'Delete a company',
+			},
+			{
+				name: 'Get a Company',
+				value: 'getCompany',
+				action: 'Get a company',
 			},
 			{
 				name: 'Search a Company',
@@ -82,11 +87,6 @@ export const companyOperations: INodeProperties[] = [
 				name: 'Update a Company',
 				value: 'updateCompany',
 				action: 'Update a company',
-			},
-			{
-				name: 'Delete a Company',
-				value: 'deleteCompany',
-				action: 'Delete a company',
 			},
 		],
 		default: 'getCompany',
@@ -327,7 +327,7 @@ export const companyOperations: INodeProperties[] = [
 		name: 'listAllCompany',
 		type: 'boolean',
 		default: false,
-		description: 'Caso selecionado, vai listar todos resultados da pesquisa de uma só vez',
+		description: 'Caso Selecionado, Vai Listar Todos Resultados Da Pesquisa De Uma Só Vez',
 		displayOptions: { 
 			show: {
 				operation: ['searchCompany'],

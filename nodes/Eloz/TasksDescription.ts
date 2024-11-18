@@ -129,6 +129,7 @@ export const taskOperations: INodeProperties[] = [
 		displayName: 'Prioridade',
 		name: 'priorityTask',
 		type: 'options',
+		// eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-options
 		default: '1',
 		required: true,
 		options: [
@@ -399,6 +400,7 @@ export const taskOperations: INodeProperties[] = [
 		displayName: 'Prioridade',
 		name: 'priorityTaskUpdate',
 		type: 'options',
+		// eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-options
 		default: '1',
 		options: [
 			{

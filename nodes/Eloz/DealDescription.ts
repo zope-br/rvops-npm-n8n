@@ -165,6 +165,7 @@ export const dealOperations: INodeProperties[] = [
 		displayName: 'Prioridade',
 		name: 'priority',
 		type: 'options',
+		// eslint-disable-next-line n8n-nodes-base/node-param-default-wrong-for-options
 		default: '1',
 		required: true,
 		options: [

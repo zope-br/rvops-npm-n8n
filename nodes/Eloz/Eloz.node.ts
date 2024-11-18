@@ -68,6 +68,7 @@ export class Eloz implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Rvops',
 		name: 'rvops',
+		// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
 		icon: 'file:rvops.png',
 		group: ['input'],
 		version: 1,

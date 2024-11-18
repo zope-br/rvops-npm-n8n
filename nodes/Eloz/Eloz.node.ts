@@ -108,36 +108,28 @@ export class Eloz implements INodeType {
 				noDataExpression: true,
 				options: [
 					{
-						name: 'Contato',
-						value: 'contact',
+						name: 'Associação',
+						value: 'association',
 					},
 					{
-						name: 'Negócio',
-						value: 'deal',
+						name: 'Contato',
+						value: 'contact',
 					},
 					{
 						name: 'Empresa',
 						value: 'company',
 					},
 					{
-						name: 'Produto',
-						value: 'product',
-					},
-					{
-						name: 'Usuário',
-						value: 'user',
+						name: 'Negócio',
+						value: 'deal',
 					},
 					{
 						name: 'Nota',
 						value: 'note',
 					},
 					{
-						name: 'Tarefa',
-						value: 'task',
-					},
-					{
-						name: 'Associação',
-						value: 'association',
+						name: 'Produto',
+						value: 'product',
 					},
 					{
 						name: 'Propriedade',
@@ -146,7 +138,15 @@ export class Eloz implements INodeType {
 					{
 						name: 'Segmento',
 						value: 'segments',
-					}
+					},
+					{
+						name: 'Tarefa',
+						value: 'task',
+					},
+					{
+						name: 'Usuário',
+						value: 'user',
+					},
 				],
 				default: 'contact',
 			},

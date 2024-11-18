@@ -206,7 +206,7 @@ export const segmentsOperations: INodeProperties[] = [
 		name: 'listAllSegments',
 		type: 'boolean',
 		default: false,
-		description: 'Caso selecionado, vai listar todos resultados da listagem de uma só vez',
+		description: 'Whether - Caso selecionado, vai listar todos resultados da listagem de uma só vez',
 		displayOptions: { 
 			show: {
 				operation: ['listSegment'],
@@ -218,7 +218,7 @@ export const segmentsOperations: INodeProperties[] = [
 		name: 'watchListSegments',
 		type: 'boolean',
 		default: true,
-		description: 'Caso selecionado, toda vez que o processo do N8N executar ele vai listar a partir do ultimo cursor',
+		description: 'Whether - Caso selecionado, toda vez que o processo do N8N executar ele vai listar a partir do ultimo cursor',
 		displayOptions: { 
 			show: {
 				operation: ['listSegment'],

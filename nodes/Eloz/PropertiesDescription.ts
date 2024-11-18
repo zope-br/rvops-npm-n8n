@@ -137,7 +137,7 @@ export const propertiesOperations: INodeProperties[] = [
 		name: 'isRequired',
 		type: 'boolean',
 		default: false, 
-		description: 'Caso selecionado, a propriedade será obrigatória',
+		description: 'Whether - Caso selecionado, a propriedade será obrigatória',
 		displayOptions: {
 			show: {
 				operation: ['createProperties'],
@@ -149,7 +149,7 @@ export const propertiesOperations: INodeProperties[] = [
 		name: 'isUniqueIdentifier',
 		type: 'boolean',
 		default: false, 
-		description: 'Caso selecionado, a propriedade será uma identificação unica, não podendo ter valores iguais entre os objetos',
+		description: 'Whether - Caso selecionado, a propriedade será uma identificação unica, não podendo ter valores iguais entre os objetos',
 		displayOptions: {
 			show: {
 				typeProperty: ['text', 'textarea', 'number'],

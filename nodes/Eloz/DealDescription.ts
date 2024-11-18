@@ -165,7 +165,7 @@ export const dealOperations: INodeProperties[] = [
 		displayName: 'Prioridade',
 		name: 'priority',
 		type: 'options',
-		default: undefined,
+		default: '1',
 		required: true,
 		options: [
 			{
@@ -439,7 +439,7 @@ export const dealOperations: INodeProperties[] = [
 		name: 'listAllDeal',
 		type: 'boolean',
 		default: false,
-		description: 'Caso selecionado, vai listar todos resultados da pesquisa de uma só vez',
+		description: 'Whether - Caso selecionado, vai listar todos resultados da pesquisa de uma só vez',
 		displayOptions: { 
 			show: {
 				operation: ['searchDeal'],
@@ -556,7 +556,7 @@ export const dealOperations: INodeProperties[] = [
 		name: 'listAllListDeals',
 		type: 'boolean',
 		default: false,
-		description: 'Caso selecionado, vai listar todos resultados da pesquisa de uma só vez',
+		description: 'Whether - Caso selecionado, vai listar todos resultados da pesquisa de uma só vez',
 		displayOptions: { 
 			show: {
 				operation: ['listDeals'],
@@ -568,7 +568,7 @@ export const dealOperations: INodeProperties[] = [
 		name: 'watchDealsList',
 		type: 'boolean',
 		default: true,
-		description: 'Caso selecionado, toda vez que o processo do N8N executar ele vai listar a partir do ultimo cursor',
+		description: 'Whether - Caso selecionado, toda vez que o processo do N8N executar ele vai listar a partir do ultimo cursor',
 		displayOptions: { 
 			show: {
 				operation: ['listDeals'],

@@ -1,6 +1,6 @@
 {
 	"name": "@rvops/n8n-nodes-rvops",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Desenvolvido para simplificar operações, automações e sincronizações, oferecendo mais autonomia e praticidade aos clientes.",
 	"keywords": [
 		"n8n-community-node-package"

@@ -36,10 +36,10 @@
 	"n8n": {
 		"n8nNodesApiVersion": 1,
 		"credentials": [
-			"dist/credentials/ExampleCredentialsApi.credentials.js"
+			"dist/credentials/ElozCredentialsApi.credentials.js"
 		],
 		"nodes": [
-			"dist/nodes/ExampleNode/ExampleNode.node.js"
+			"dist/nodes/Eloz/Eloz.node.js"
 		]
 	},
 	"devDependencies": {
